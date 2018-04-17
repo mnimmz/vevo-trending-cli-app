@@ -11,6 +11,10 @@ class YoutubeTrending::CLI
     puts "Today's Trending YouTube Videos:"
 
     @trending = YoutubeTrending::Trending.today
+
+    @trending.each.with_index(1) do |video, i|
+      puts "#{i}. #{video.name} - #{video.channel} - #{video.views}"
+    end
   end
 
   def main_menu
@@ -18,16 +22,11 @@ class YoutubeTrending::CLI
     while input != "exit"
       puts "Enter the number of the video you want to know more about or type back to see all videos or type exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on video 1..."
-      when "2"
-        puts "More info on video 2..."
-      when "3"
-        puts "More info on video 3..."
-      when "4"
-        puts "More info on video 4..."
-      when "back"
+
+      if input.to_i > 0
+        videos = @trending[input.to_i - 1]
+        puts "#{videos.name} - #{videos.channel} - #{videos.views} - #{videos.published} - #{videos.description}"
+      elsif input == "back"
         trending_videos
       else
         puts "Invalid entry. Please type back or exit."
