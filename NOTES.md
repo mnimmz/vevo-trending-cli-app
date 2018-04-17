@@ -17,4 +17,8 @@
           2.	Other options:
                 o	Back
 •	What is a trending video?:
-    o	A trending video has a title, a channel name, number of views, a date published and a description
+    o	A trending video has a title
+    o A channel name
+    o Number of views
+    o A date published  
+    o A description
