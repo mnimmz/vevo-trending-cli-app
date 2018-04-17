@@ -1,5 +1,4 @@
 # Stopped video at 36:42
-require 'nokogiri'
 require 'open-uri'
 
 class YoutubeTrending::Trending
@@ -15,11 +14,13 @@ class YoutubeTrending::Trending
 
   def self.scrape_videos
     videos = []
+    youtube = Nokogiri::HTML(open('https://www.youtube.com/feed/trending'))
     # Go to YouTube Trending page, find videos
     # Extract the content
     # Instantiate videos
-
-    videos
+    youtube.search("div#grid-container.style-scope ytd-expanded-shelf-contents-renderer")
+    binding.pry
+    # videos
 
   end
 end
