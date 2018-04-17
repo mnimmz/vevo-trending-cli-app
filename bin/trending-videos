@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
-require './lib/youtube_trending'
+require 'bundler/setup'
+require 'youtube_trending'
 
 YoutubeTrending::CLI.new.call

@@ -1,21 +1,16 @@
 # CLI Controller
 class YoutubeTrending::CLI
-
   def call
-    puts "Today's Trending YouTube Videos:"
+
     trending_videos
     main_menu
     exit_videos
   end
 
   def trending_videos
-    puts <<~HEREDOC
-      1.	Coachella 2018 Live Channel 1 – Coachella – 1M Views
-      2.	Meet the Parents Cold Open – SNL – Saturday Night Live – 1.9M Views
-      3.	Incredibles 2 Official Trailer – Pixar – 2M Views
-      4.	The Weeknd – Call Out My Name (Official Video) – 11M Views
-    HEREDOC
-    # @trending = YoutubeTrending::Trending.today
+    puts "Today's Trending YouTube Videos:"
+
+    @trending = YoutubeTrending::Trending.today
   end
 
   def main_menu
