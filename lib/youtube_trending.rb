@@ -1,5 +1,3 @@
-require "youtube_trending/version"
+require_relative "./youtube_trending/version" 
 
-module YoutubeTrending
-  # Your code goes here...
-end
+require_relative './youtube_trending/cli'

@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/youtube_trending'
+
+YoutubeTrending::CLI.new.call
