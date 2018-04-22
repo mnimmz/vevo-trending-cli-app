@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 require 'bundler/setup'
-require 'youtube_trending'
+require 'vevo_trending'
 
-YoutubeTrending::CLI.new.call
+VevoTrending::CLI.new.call

@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "youtube_trending/version"
+require "vevo_trending/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "youtube_trending"
-  spec.version       = YoutubeTrending::VERSION
+  spec.name          = "vevo_trending"
+  spec.version       = VevoTrending::VERSION
   spec.authors       = ["mnimmz"]
   spec.email         = ["morgannimmons@gmail.com"]
 
