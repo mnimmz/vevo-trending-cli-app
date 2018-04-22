@@ -31,7 +31,7 @@ class VevoTrending::CLI
     input = nil
 
     while input != "exit"
-      puts "Type more to view more videos, type back to see all videos or type exit:"
+      puts "Type more to view more videos, then enter the number of the video you want to know more about. Type back to see all videos or type exit:"
       input = gets.strip.downcase
 
       if input == "more"
@@ -40,11 +40,17 @@ class VevoTrending::CLI
             puts "#{i}. #{video.title} - #{video.name}"
           end
         end
+
+      elsif input.to_i > 0
+          videos = @trending[input.to_i - 1]
+          puts "#{videos.title} by #{videos.name}"
+
       elsif input == "back"
         all_videos
 
       elsif input == "exit"
         exit_videos
+
       else
         puts "Invalid entry. Please type back or exit."
       end
