@@ -1,7 +1,10 @@
 # CLI Controller
-class VevoTrending::CLI
-  def call
+require_relative '../vevo_trending/trending_module'
 
+class VevoTrending::CLI
+  include Trending_Module
+
+  def call
     trending_videos
     main_menu
   end
@@ -20,11 +23,7 @@ class VevoTrending::CLI
   end
 
   def all_videos
-    @trending = VevoTrending::Trending.today
-
-    @trending.each.with_index(1) do |video, i|
-      puts "#{i}. #{video.title} - #{video.name}"
-    end
+    Trending_Module.trending_video
   end
 
   def main_menu
