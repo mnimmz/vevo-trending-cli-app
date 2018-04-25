@@ -14,12 +14,10 @@ class VevoTrending::CLI
 
     @trending = VevoTrending::Trending.today
 
-    @trending.each.with_index(1) do |video, i|
-      if i < 11
-        puts "#{i}. #{video.title} - #{video.name}"
-      end
-
+    (0..9).each.with_index(1) do |i|
+      puts "#{i + 1}. #{@trending[i].title} - #{@trending[i].name}"
     end
+
   end
 
   def all_videos
