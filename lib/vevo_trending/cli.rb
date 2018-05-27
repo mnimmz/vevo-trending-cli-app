@@ -1,8 +1,6 @@
 # CLI Controller
-require_relative '../vevo_trending/trending_module'
 
 class VevoTrending::CLI
-  include Trending_Module
 
   def call
     trending_videos
@@ -21,7 +19,9 @@ class VevoTrending::CLI
   end
 
   def all_videos
-    Trending_Module.trending_video
+    @trending.each.with_index(1) do |video, i|
+      puts "#{i}. #{video.title} - #{video.name}"
+    end
   end
 
   def main_menu
@@ -40,7 +40,7 @@ class VevoTrending::CLI
 
       elsif input.to_i > 0 && input.to_i < 21
           videos = @trending[input.to_i - 1]
-          puts "#{videos.title} by #{videos.name}"
+          puts "Title: #{videos.title} by #{videos.name}\nLikes: #{videos.likes} likes\nViews: #{videos.views} views\n#{videos.director}"
 
       elsif input == "back"
         all_videos
