@@ -1,6 +1,6 @@
 # VevoTrending
 
-Vevo Trending CLI App lists the top 20 trending videos on Vevo.com. Users can interact with the app via the command line. They have the ability to see 10 trending videos at a time, view all 20 trending videos at once and choose a specific video to see it's title and who the artist is. The name of the app is different from the actual website that data is being scraped from because I changed sites and it can be a pain to rename a repo.
+Vevo Trending CLI App lists the top 20 trending videos on Vevo.com. Users can interact with the app via the command line. They have the ability to see 10 trending videos at a time, view all 20 trending videos at once and choose a specific video to see it's title and who the artist is. 
 
 ## Installation
 
